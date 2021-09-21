@@ -16,10 +16,17 @@
         <p style="margin-top:-15px">Anime and manga database</p>
         <br><br>
 
-        <h2><%= redis.hget("anime:" + env.params.url["id"], "title") %></h2>
-        <%- if redis.hget("anime:" + env.params.url["id"], "description") != nil -%><p style="max-width:75%"><%= redis.hget("anime:" + env.params.url["id"], "description") %></p><%- end -%>
-        <br>
-        <p><a href="/edit/anime/<%= env.params.url["id"] %>">Edit</a></p>
+        <form action="/edit/anime/<%= env.params.url["id"] %>/submit" method="get">
+            <p>Title</p>
+            <input type="text" name="title" placeholder="Title goes here" value="<%= redis.hget("anime:" + env.params.url["id"], "title") %>" style="width:50%"></input>
+            <br><br>
+
+            <p>Description</p>
+            <textarea name="description" placeholder="Give a nice description here" style="width:75%;height:20%"><%= redis.hget("anime:" + env.params.url["id"], "description") %></textarea>
+            <br><br>
+
+            <button type="submit">Submit</button>
+        </form>
 
         <br><br><br>
 

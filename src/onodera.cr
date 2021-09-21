@@ -5,8 +5,6 @@
 #   lncndev 2021
 #
 
-
-
 # Require dependencies
 require "kemal"
 require "json"
@@ -14,7 +12,7 @@ require "redis"
 
 # Version number and name
 VERSION_NUMBER = "0.1"
-VERSION_NAME = "Mami"
+VERSION_NAME   = "Mami"
 
 # Give sign of life
 puts "Starting Onodera"
