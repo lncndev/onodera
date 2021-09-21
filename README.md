@@ -1,27 +1,36 @@
-# onodera
+## NOTICE!
+Still in very early development! **DO NOT USE IN PRODUCTION!!**
 
-TODO: Write a description here
+# Onodera
+An anime and manga database
 
 ## Installation
+You'll have to build it yourself as it's still in development.
 
-TODO: Write installation instructions here
+ 1) `yay -Sy redis`
+ 2) `git clone https://github.com/onoderproject/onodera`
+ 3) `cd onodera`
+ 4) `crystal build src/onodera.cr`
+ 5) `./onodera`
 
-## Usage
+## TODO before v1 Kukuru
+ - Improve search (with RediSearch or something similar)
+ - Make data open
+   - Add data export
+   - Add data import
+   - Add data syncing 
+ - Add manga support
+ - Add builtin dark mode
 
-TODO: Write usage instructions here
-
-## Development
-
-TODO: Write development instructions here
+## Features I'd like to add some day
+ - Decentralize the database
 
 ## Contributing
-
-1. Fork it (<https://github.com/your-github-user/onodera/fork>)
+1. Fork it (<https://github.com/onoderaproject/onodera/fork>)
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create a new Pull Request
 
 ## Contributors
-
-- [your-name-here](https://github.com/your-github-user) - creator and maintainer
+ - [lncndev](https://gitlab.com/lncn) - creator and maintainer

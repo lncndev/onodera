@@ -12,7 +12,9 @@ dependencies:
   kemal:
     github: kemalcr/kemal
   redis:
-    github: stefanwille/crystal-redis
+    github: onoderaproject/crystal-redis
+  tasker:
+    github: onoderaproject/tasker
 
 crystal: 1.1.1
 

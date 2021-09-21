@@ -6,3 +6,4 @@
 /onodera
 *.rdb
 /shard.lock
+/data.json
