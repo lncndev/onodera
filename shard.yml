@@ -1,0 +1,19 @@
+name: onodera
+version: 0.1.0
+
+authors:
+  - lncndev <lincoln@chuuo.net>
+
+targets:
+  onodera:
+    main: src/onodera.cr
+
+dependencies:
+  kemal:
+    github: kemalcr/kemal
+  redis:
+    github: stefanwille/crystal-redis
+
+crystal: 1.1.1
+
+license: AGPLv3
