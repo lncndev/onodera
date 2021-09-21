@@ -27,11 +27,20 @@ get "/api/:action" do |env|
 end
 
 get "/anime/:id" do |env|
+  # Get data
+  title = redis.hget("anime:" + id, "title")
+  description = redis.hget("anime:" + id, "description")
+
   # Render anime page
   render "src/views/anime.ecr"
 end
 
 get "/edit/:type/:id" do |env|
+  # Get existing values
+  id = env.params.url["id"]
+  title = redis.hget("anime:" + id, "title")
+  description = redis.hget("anime:" + id, "description")
+
   # Render edit page
   render "src/views/edit.ecr"
 end
