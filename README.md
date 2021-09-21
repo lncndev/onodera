@@ -2,7 +2,7 @@
 Still in very early development! **DO NOT USE IN PRODUCTION!!**
 
 # Onodera
-An anime and manga database
+Anime and manga database
 
 ## Installation
 You'll have to build it yourself as it's still in development.
@@ -26,11 +26,18 @@ You'll have to build it yourself as it's still in development.
  - Decentralize the database
 
 ## Contributing
-1. Fork it (<https://github.com/onoderaproject/onodera/fork>)
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create a new Pull Request
+### Fixes and other minor changes
+ 1) Fork it (<https://github.com/onoderaproject/onodera/fork>)
+ 2) Commit your changes (`git commit -am 'DESCRIPTION OF CHANGES HERE'`)
+ 3) Push to the branch (`git push origin main`)
+ 4) Create a new Pull Request
+
+### New feature
+ 1) Fork it (<https://github.com/onoderaproject/onodera/fork>)
+ 2) Create your feature branch (`git checkout -b my-new-feature`)
+ 3) Commit your changes (`git commit -am 'Add some feature'`)
+ 4) Push to the branch (`git push origin my-new-feature`)
+ 5) Create a new Pull Request
 
 ## Contributors
  - [lncndev](https://gitlab.com/lncn) - creator and maintainer
