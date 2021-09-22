@@ -14,6 +14,7 @@ You'll have to build it yourself as it's still in development.
  5) `./onodera`
 
 ## TODO before v1 Kukuru
+ - Working auth
  - Improve search (with RediSearch or something similar)
  - Make data open
    - Add data export
