@@ -1,6 +1,6 @@
 FROM archlinux
 
-RUN pacman -Syu redis crystal shards
+RUN pacman -Syu --noconfirm redis crystal shards
 
 WORKDIR /app
 COPY . .
