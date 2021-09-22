@@ -8,6 +8,7 @@
 # Require dependencies
 require "kemal"
 require "redis"
+require "kemal-session"
 
 # Initialize database
 redis = Redis.new

@@ -11,6 +11,8 @@ targets:
 dependencies:
   kemal:
     github: kemalcr/kemal
+  kemal-session:
+    github: kemalcr/kemal-session
   redis:
     github: onoderaproject/crystal-redis
   tasker:

@@ -24,5 +24,6 @@ redis = Redis.new
 require "./onodera/routes"
 
 # Start Kemal
+Kemal::Session.config.secret = "test"
 Kemal.config.env = "production"
 Kemal.run
