@@ -1,6 +1,6 @@
 <html>
     <head>
-        <link href="/assets/css/bootstrap.min.css" rel="stylesheet">
+        <link href="/assets/css/bootstrap.css" rel="stylesheet">
         <style>
             @font-face { font-family: Sacramento; src: url('/assets/fonts/sacramento.ttf'); }
             @font-face { font-family: Trueno; src: url('/assets/fonts/trueno.otf'); }
@@ -16,10 +16,10 @@
         <p style="margin-top:-15px">Anime and manga database</p>
         <br><br>
 
-        <h2><%= title %></h2>
-        <%- if description != nil -%><p style="max-width:75%"><%= description %></p><%- end -%>
+        <h2><%= redis.hget("anime:" + env.params.url["id"], "title") %></h2>
+        <%- if redis.hget("anime:" + env.params.url["id"], "description") != nil -%><p style="max-width:75%"><%= redis.hget("anime:" + env.params.url["id"], "description") %></p><%- end -%>
         <br>
-        <p><a href="/edit/anime/<%= env.params.url["id"] %>">Edit</a></p>
+        <p><a href="/edit/anime/<%= env.params.url["id"] %>"></p>
 
         <br><br><br>
 

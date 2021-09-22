@@ -7,7 +7,6 @@
 
 # Require dependencies
 require "kemal"
-require "json"
 require "redis"
 
 # Initialize database
@@ -27,6 +26,9 @@ get "/api/:action" do |env|
 end
 
 get "/anime/:id" do |env|
+  # Define variables
+  id = env.params.query["id"]
+
   # Get data
   title = redis.hget("anime:" + id, "title")
   description = redis.hget("anime:" + id, "description")
@@ -55,3 +57,5 @@ get "/edit/:type/:id/submit" do |env|
   redis.hset("anime:" + id, "title", title)
   redis.hset("anime:" + id, "description", description)
 end
+
+require "./auth"

@@ -7,12 +7,10 @@
 
 # Require dependencies
 require "kemal"
-require "json"
 require "redis"
 
-# Version number and name
-VERSION_NUMBER = "0.1"
-VERSION_NAME   = "Mami"
+# Require config
+require "../config"
 
 # Give sign of life
 puts "Starting Onodera"
