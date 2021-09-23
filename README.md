@@ -1,7 +1,7 @@
 <p align="center"><img src="https://raw.githubusercontent.com/onoderaproject/onodera/main/public/assets/images/logo/256.png" /></p>
 
 <h1 align="center">Onodera</h1>
-Anime and manga database
+Onodera is an anime and manga database similar to MAL (MyAnimeList.) Written in Crystal.
 
 ## Installation
 You'll have to build it yourself as Onodera is still in beta.
