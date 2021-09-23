@@ -19,16 +19,30 @@ You'll have to build it yourself as Onodera is still in beta.
 ## TODO before v1 Kukuru
  - ~~Working auth~~
  - ~~Anime support~~
+ - Characters support
+ - Anime page edit approval and history
 
-## TODO before v2 Sayu
+## TODO before v2 Mizuhara
+ - MAL scraper
+ - Official hosted instance
+
+## TODO before v3 Atsuko
  - Manga support
  - Make data open
    - Add data export
    - Add data import
    - Add data syncing
+
+## TODO before v4 Sumi
  - User profiles
  - Built-in dark mode
  - More advanced UI
+ - Aki tour
+
+## TODO before v5 Sayu
+ - ML-powered "smart" recommendations (w/ Freemium)
+ - Recommendations
+ - And more
 
 ## Features I'd like to add some day
  - Decentralize the database
