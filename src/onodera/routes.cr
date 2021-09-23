@@ -10,6 +10,7 @@ require "kemal"
 require "redis"
 require "kemal-session"
 require "kilt/slang"
+require "html"
 
 # Initialize database
 redis = Redis.new
@@ -56,8 +57,8 @@ get "/edit/:type/:id/submit" do |env|
   description = env.params.query["description"]
 
   # Submit edits
-  redis.hset("anime:" + id, "title", title)
-  redis.hset("anime:" + id, "description", description)
+  redis.hset("anime:" + id, "title", HTML.escape(title))
+  redis.hset("anime:" + id, "description", HTML.escape(description))
 end
 
 require "./auth"

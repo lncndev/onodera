@@ -26,6 +26,8 @@ get "/auth/endpoint" do |env|
 
   token = Random::Secure.random_bytes(128)
 
+  "Authenticating..."
+
   if redis.sismember("users", username) == 1
     puts Crypto::Bcrypt::Password.create(password)
     puts redis.hget("user:" + username, "password_hash")
