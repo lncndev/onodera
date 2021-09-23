@@ -7,3 +7,4 @@
 *.rdb
 /shard.lock
 /data.json
+/.github/
