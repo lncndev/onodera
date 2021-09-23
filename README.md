@@ -17,15 +17,19 @@ You'll have to build it yourself as Onodera is still in beta.
  5) `./onodera`
 
 ## TODO before v1 Kukuru
- - Working auth
- - Improve search (with RediSearch or something similar)
+ - ~~Working auth~~
+ - ~~Anime support~~
+ - 
+
+## TODO before v2 Sayu
+ - Manga support
  - Make data open
    - Add data export
    - Add data import
-   - Add data syncing 
- - Add manga support
- - Add builtin dark mode
- - Write some tests
+   - Add data syncing
+ - User profiles
+ - Built-in dark mode
+ - More advanced UI
 
 ## Features I'd like to add some day
  - Decentralize the database
