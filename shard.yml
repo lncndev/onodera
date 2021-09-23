@@ -10,7 +10,7 @@ targets:
 
 dependencies:
   kemal:
-    github: kemalcr/kemal
+    github: sdogruyol/kemal
   kemal-session:
     github: kemalcr/kemal-session
   redis:
@@ -19,6 +19,8 @@ dependencies:
     github: onoderaproject/tasker
   kemal-auth-token:
     github: onoderaproject/kemal-auth-token
+  slang:
+    github: jeromegn/slang
 
 crystal: 1.1.1
 

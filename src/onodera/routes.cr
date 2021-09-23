@@ -9,6 +9,7 @@
 require "kemal"
 require "redis"
 require "kemal-session"
+require "kilt/slang"
 
 # Initialize database
 redis = Redis.new
