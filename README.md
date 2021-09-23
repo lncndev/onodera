@@ -25,6 +25,7 @@ You'll have to build it yourself as Onodera is still in beta.
    - Add data syncing 
  - Add manga support
  - Add builtin dark mode
+ - Write some tests
 
 ## Features I'd like to add some day
  - Decentralize the database
