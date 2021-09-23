@@ -21,34 +21,35 @@ end
 
 get "/auth/endpoint" do |env|
   # Get params
-  username = env.params.query["username"].to_s
-  password = env.params.query["password"].to_s
+  username = env.params.query["username"]
+  password = env.params.query["password"]
 
   token = Random::Secure.random_bytes(128)
 
-  if redis.sismember("users", username)
+  if redis.sismember("users", username) == 1
+    puts Crypto::Bcrypt::Password.create(password)
+    puts redis.hget("user:" + username, "password_hash")
 
     # Check if password matches hash
-    if Crypto::Bcrypt::Password.create(password).to_s == redis.hget("user:" + username, "password_hash").to_s
+    if Crypto::Bcrypt::Password.new(redis.hget("user:" + username, "password_hash").to_s).verify(password) == true
+      # Set token on server
+      redis.hset("user:" + username, "token", token.to_s)
+      redis.hset("usertokens", token.to_s, username)
 
-        # Set token on server
-        redis.hset("user:" + username, "token", token.to_s)
-      
-        # Set token on client
-        env.session.string("token", redis.hset("user:" + username, "token", token.to_s).to_s)
+      # Set token on client
+      env.session.string("token", redis.hget("user:" + username, "token").to_s)
 
-      # Close window after auth complete
-      "<script>window.close()</script>"
+      # TODO: Redirect after auth complete
+      "Success!"
     else
       "Bad password"
     end
-
   else
-
     hash = Crypto::Bcrypt::Password.create(password).to_s
 
-    redis.sadd("users", username)
-    redis.hset("user:" + username, "password_hash", hash)
+    redis.sadd("users", username.to_s)
+    redis.hset("user:" + username.to_s, "password_hash", hash)
 
+    "Registered."
   end
 end

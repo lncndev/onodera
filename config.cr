@@ -3,16 +3,16 @@
 #
 
 # Version info
-VERSION_NUMBER = "0.1"
-VERSION_NAME   = "Mami"
+ONODERA_VERSION_NUMBER = "0.1"
+ONODERA_VERSION_NAME   = "Mami"
 
 # Site info
-SITE_NAME    = "onodera"
-SITE_TAGLINE = "Anime and manga database"
-SITE_OWNER   = ""
+ONODERA_SITE_NAME    = "onodera"
+ONODERA_SITE_TAGLINE = "Anime and manga database"
+ONODERA_SITE_OWNER   = "lncndev"
 
 # Defaults
-DARK_MODE_AS_DEFAULT = "true" # Hasn't yet been implemented
+ONODERA_DARK_MODE_AS_DEFAULT = "true" # Hasn't yet been implemented
 
 # Onodera Updater
-UPDATE_BRANCH = "prod"
+ONODERA_SHIM_UPDATE_BRANCH = "prod" # Hasn't yet been implemented
