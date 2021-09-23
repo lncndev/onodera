@@ -1,7 +1,7 @@
 ## NOTICE!
 Still in very early development! **DO NOT USE IN PRODUCTION!!**
 
-[Onodera Logo](https://raw.githubusercontent.com/onoderaproject/onodera/main/public/assets/images/logo/256.png)
+![Onodera Logo](https://raw.githubusercontent.com/onoderaproject/onodera/main/public/assets/images/logo/256.png)
 <h1 style="text-align:center">Onodera</h1>
 Anime and manga database
 
