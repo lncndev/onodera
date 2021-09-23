@@ -3,7 +3,7 @@
 #
 
 # Version info
-ONODERA_VERSION_NUMBER = "0.1"
+ONODERA_VERSION_NUMBER = "0.3"
 ONODERA_VERSION_NAME   = "Mami"
 
 # Site info
