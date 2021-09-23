@@ -9,7 +9,6 @@
 require "kemal"
 require "redis"
 require "kemal-session"
-require "kilt/slang"
 require "html"
 
 # Initialize database
@@ -30,7 +29,7 @@ end
 
 get "/anime/:id" do |env|
   # Define variables
-  id = env.params.query["id"]
+  id = env.params.url["id"]
 
   # Get data
   title = redis.hget("anime:" + id, "title")
@@ -59,6 +58,15 @@ get "/edit/:type/:id/submit" do |env|
   # Submit edits
   redis.hset("anime:" + id, "title", HTML.escape(title))
   redis.hset("anime:" + id, "description", HTML.escape(description))
+  redis.set("anime:" + HTML.escape(title).to_s + ":id", id.to_s)
+
+  # Redirect back to anime page
+  env.redirect("/anime/" + id)
 end
 
 require "./auth"
+
+get "/search" do |env|
+  results = redis.keys("anime:*" + env.params.query["q"] + "*:id")
+  render "src/views/search.ecr"
+end

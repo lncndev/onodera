@@ -42,7 +42,7 @@ get "/auth/endpoint" do |env|
       env.session.string("token", redis.hget("user:" + username, "token").to_s)
 
       # TODO: Redirect after auth complete
-      "Success!"
+      env.redirect("/")
     else
       "Bad password"
     end
