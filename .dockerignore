@@ -7,4 +7,9 @@
 *.rdb
 /shard.lock
 /data.json
+/.editorconfig
+/.gitignore
+/README.md
+/onodera
+/LICENSE
 /.github/

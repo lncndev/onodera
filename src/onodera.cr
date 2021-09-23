@@ -5,16 +5,12 @@
 #   lncndev 2021
 #
 
-
-
 # Require dependencies
 require "kemal"
-require "json"
 require "redis"
 
-# Version number and name
-VERSION_NUMBER = "0.1"
-VERSION_NAME = "Mami"
+# Require config
+require "../config"
 
 # Give sign of life
 puts "Starting Onodera"
@@ -28,5 +24,6 @@ redis = Redis.new
 require "./onodera/routes"
 
 # Start Kemal
+Kemal::Session.config.secret = "test"
 Kemal.config.env = "production"
 Kemal.run

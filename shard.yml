@@ -1,5 +1,5 @@
 name: onodera
-version: 0.1.0
+version: 0.4.0
 
 authors:
   - lncndev <lincoln@chuuo.net>
@@ -10,11 +10,17 @@ targets:
 
 dependencies:
   kemal:
-    github: kemalcr/kemal
+    github: sdogruyol/kemal
+  kemal-session:
+    github: kemalcr/kemal-session
   redis:
     github: onoderaproject/crystal-redis
   tasker:
     github: onoderaproject/tasker
+  kemal-auth-token:
+    github: onoderaproject/kemal-auth-token
+  slang:
+    github: jeromegn/slang
 
 crystal: 1.1.1
 

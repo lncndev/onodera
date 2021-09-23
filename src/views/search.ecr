@@ -16,19 +16,16 @@
         <p style="margin-top:-15px">Anime and manga database</p>
         <br><br>
 
-        <form action="search" method="get">
+        <form action="/search" method="get">
             <input type="text" placeholder="Search for anime..." name="q"></input>
             <button type="submit">Search</button>
         </form>
         <br><br>
 
-        <h3>Modern.</h3>
-        <h3>Fast.</h3>
-        <h3>Private.</h3>
-        <h3>Open.</h3>
-        <br>
-
-        <p>Please consider contributing code, art, or anything we can use to help this project grow and thrive.</p>
+        <%- results.each do |result| -%>
+        <%- puts result.to_s -%>
+        <h2><a href="/anime/<%= redis.get(result.to_s).to_s %>"><%= redis.hget("anime:" + redis.get(result.to_s).to_s, "title") %></h2>
+        <%- end -%>
 
         <br><br><br>
 
