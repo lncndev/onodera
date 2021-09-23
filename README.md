@@ -1,7 +1,8 @@
 ## NOTICE!
 Still in very early development! **DO NOT USE IN PRODUCTION!!**
 
-# Onodera
+[Onodera Logo](https://raw.githubusercontent.com/onoderaproject/onodera/main/public/assets/images/logo/256.png)
+<h1 style="text-align:center">Onodera</h1>
 Anime and manga database
 
 ## Installation
@@ -42,3 +43,14 @@ You'll have to build it yourself as it's still in development.
 
 ## Contributors
  - [lncndev](https://gitlab.com/lncn) - creator and maintainer
+
+## Additional info
+
+### Logo
+
+#### About
+The logo features our mascot, Aki, wearing a t-shirt with a simplified version of the Crystal logo printed on it
+
+#### Copyright info
+lncndev 2021
+CC-BY-SA

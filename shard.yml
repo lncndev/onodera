@@ -17,6 +17,8 @@ dependencies:
     github: onoderaproject/crystal-redis
   tasker:
     github: onoderaproject/tasker
+  kemal-auth-token:
+    github: onoderaproject/kemal-auth-token
 
 crystal: 1.1.1
 
