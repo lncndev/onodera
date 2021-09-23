@@ -1,0 +1,26 @@
+name: Crystal CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches:
+    - main
+    - prod
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    container:
+      image: crystallang/crystal
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Install dependencies
+      run: shards install
+    - name: Run tests
+      run: crystal spec
+    - name: Compile binary
+      run: crystal build src/onodera.cr
