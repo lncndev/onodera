@@ -1,14 +1,9 @@
 ## NOTICE!
 Still in very early development! **DO NOT USE IN PRODUCTION!!**
 
-<<<<<<< HEAD
 <p align="center"><img src="https://raw.githubusercontent.com/onoderaproject/onodera/main/public/assets/images/logo/256.png" /></p>
 
 <h1 align="center">Onodera</h1>
-=======
-![Onodera Logo](https://raw.githubusercontent.com/onoderaproject/onodera/main/public/assets/images/logo/256.png)
-<h1 style="text-align:center">Onodera</h1>
->>>>>>> 6c1792a4e8f9108e854b5a05775285f0929138c4
 Anime and manga database
 
 ## Installation
