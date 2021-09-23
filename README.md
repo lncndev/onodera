@@ -19,7 +19,6 @@ You'll have to build it yourself as Onodera is still in beta.
 ## TODO before v1 Kukuru
  - ~~Working auth~~
  - ~~Anime support~~
- - 
 
 ## TODO before v2 Sayu
  - Manga support
