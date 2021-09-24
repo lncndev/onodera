@@ -44,11 +44,21 @@ post "/auth/endpoint" do |env|
       "Bad password"
     end
   else
+    # Hash password
     hash = Crypto::Bcrypt::Password.create(password).to_s
 
+    # Add new user to database
     redis.sadd("users", username.to_s)
     redis.hset("user:" + username.to_s, "password_hash", hash)
 
-    "Registered."
+    # Set token on server
+    redis.hset("user:" + username, "token", token.to_s)
+    redis.hset("usertokens", token.to_s, username)
+
+    # Set token on client
+    env.session.string("token", redis.hget("user:" + username, "token").to_s)
+
+    # Redirect after auth complete
+    env.redirect("/")
   end
 end
