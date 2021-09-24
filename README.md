@@ -28,6 +28,7 @@ You'll have to build it yourself as Onodera is still in beta.
  - MAL scraper
  - Official hosted instance
  - Art
+ - Episode support
 
 ### TODO before v3 Nagatoro
  - Manga support
