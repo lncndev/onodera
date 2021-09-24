@@ -21,7 +21,7 @@
 
         <br><br><br>
 
-        <p><b>Onodera</b> v<%= ONODERA_VERSION_NUMBER %> <%= ONODERA_VERSION_NAME %><br>Made with <span class="mdi mdi-heart"></span> and Crystal by lncndev 2021 - AGPLv3 - <a href="https://github.com/onoderaproject">Github</a></p>
+        <p><b>Onodera</b> v<%= ONODERA_VERSION_NUMBER %> <%= ONODERA_VERSION_NAME %><br>Made with <span class="mdi mdi-heart"></span> and Crystal - lncndev 2021 - AGPLv3 - <a href="https://github.com/onoderaproject">Github</a></p>
         <%- if env.session.string?("token") -%><p>Logged in as <b><%= redis.hget("usertokens", env.session.string("token")) %></b></p><%- end -%>
     </center>
 </body>
