@@ -24,6 +24,7 @@ You'll have to build it yourself as Onodera is still in beta.
  - Characters support
  - Page edit approval
  - Better data hygiene
+ - Fix Docker image
 
 ### TODO before v2 Mizuhara
  - MAL scraper
