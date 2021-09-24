@@ -9,12 +9,12 @@ Onodera is an anime and manga database similar to MAL (MyAnimeList.) Written in 
 
 ## Installation
 Onodera isn't meant to be self-hosted, but you can build it like so:
- 1) `yay -Sy redis crystal shards` (For Arch, but process is similar on most Linux distros)
- 2) `git clone https://github.com/onoderproject/onodera`
- 3) `cd onodera`
- 4) `git checkout prod`
- 5) `crystal build src/onodera.cr`
- 6) `./onodera`
+ 1) Install Crystal compiler
+ 2) Clone project
+ 3) Change directory to `onodera`
+ 4) Checkout branch `prod`
+ 5) Build `src/onodera.cr`
+ 6) Run binary
 
 ## TODO
 
