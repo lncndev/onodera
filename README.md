@@ -27,18 +27,20 @@ You'll have to build it yourself as Onodera is still in beta.
 ### TODO before v2 Mizuhara
  - MAL scraper
  - Official hosted instance
+ - Art
 
-### TODO before v3 Atsuko
+### TODO before v3 Nagatoro
  - Manga support
  - Make data open
    - Add data export
    - Add data import
    - Add data syncing
+ - Shim (installation and auto-update)
 
 ### TODO before v4 Sumi
  - User profiles
- - Built-in dark mode
- - More advanced UI
+ - Built-in dark mode (use [DarkReader](https://darkreader.org) for now)
+ - Better UI
  - Aki tour
 
 ### TODO before v5 Sayu
