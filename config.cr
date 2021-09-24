@@ -11,6 +11,9 @@ ONODERA_SITE_NAME    = "onodera"
 ONODERA_SITE_TAGLINE = "Anime and manga database"
 ONODERA_SITE_OWNER   = "lncndev"
 
+# Admin settings
+ONODERA_ADMIN = "lncn"
+
 # Defaults
 ONODERA_DARK_MODE_AS_DEFAULT = "true" # Hasn't yet been implemented
 

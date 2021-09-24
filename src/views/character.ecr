@@ -16,17 +16,10 @@
         <p style="margin-top:-15px">Anime and manga database</p>
         <br><br>
 
-        <form action="/auth/endpoint" method="get">
-            <p>Username</p>
-            <input type="text" name="username" placeholder="shino.aki" style="width:50%"></input>
-            <br><br>
-
-            <p>Password</p>
-            <input type="password" name="password" placeholder="123456" style="width:50%"></input>
-            <br><br>
-
-            <button type="submit">Authenticate</button>
-        </form>
+        <h2><%= redis.hget("anime:" + env.params.url["id"], "title") %></h2>
+        <%- if redis.hget("anime:" + env.params.url["id"], "description") != nil -%><p style="max-width:75%"><%= redis.hget("anime:" + env.params.url["id"], "description") %></p><%- end -%>
+        <br>
+        <p><a href="/edit/anime/<%= env.params.url["id"] %>">Edit</a></p>
 
         <br><br><br>
 
