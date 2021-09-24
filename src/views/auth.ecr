@@ -1,37 +1,11 @@
-<html>
-    <head>
-        <link href="/assets/css/bootstrap.css" rel="stylesheet">
-        <style>
-            @font-face { font-family: Sacramento; src: url('/assets/fonts/sacramento.ttf'); }
-            @font-face { font-family: Trueno; src: url('/assets/fonts/trueno.otf'); }
-            body {
-                font-family: Trueno;
-            }
-        </style>
-    </head>
+<form action="/auth/endpoint" method="get">
+    <p>Username</p>
+    <input type="text" name="username" placeholder="shino.aki" style="width:50%"></input>
+    <br><br>
 
-<body>
-    <center>
-        <h1 style="font-size:100px;font-family:Sacramento;margin-top:1rem">onodera</h1>
-        <p style="margin-top:-15px">Anime and manga database</p>
-        <br><br>
+    <p>Password</p>
+    <input type="password" name="password" placeholder="123456" style="width:50%"></input>
+    <br><br>
 
-        <form action="/auth/endpoint" method="get">
-            <p>Username</p>
-            <input type="text" name="username" placeholder="shino.aki" style="width:50%"></input>
-            <br><br>
-
-            <p>Password</p>
-            <input type="password" name="password" placeholder="123456" style="width:50%"></input>
-            <br><br>
-
-            <button type="submit">Authenticate</button>
-        </form>
-
-        <br><br><br>
-
-        <p><b>Onodera</b> v<%= ONODERA_VERSION_NUMBER %> <%= ONODERA_VERSION_NAME %><br>lncndev 2021 - AGPLv3 - <a href="https://github.com/onoderaproject">Github</a></p>
-    </center>
-</body>
-
-</html>
+    <button type="submit">Authenticate</button>
+</form>

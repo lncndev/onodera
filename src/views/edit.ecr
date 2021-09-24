@@ -1,37 +1,11 @@
-<html>
-    <head>
-        <link href="/assets/css/bootstrap.css" rel="stylesheet">
-        <style>
-            @font-face { font-family: Sacramento; src: url('/assets/fonts/sacramento.ttf'); }
-            @font-face { font-family: Trueno; src: url('/assets/fonts/trueno.otf'); }
-            body {
-                font-family: Trueno;
-            }
-        </style>
-    </head>
+<form action="/edit/anime/<%= id %>/submit" method="get">
+    <p>Title</p>
+    <input type="text" name="title" placeholder="Title goes here" value="<%= title %>" style="width:50%"></input>
+    <br><br>
 
-<body>
-    <center>
-        <h1 style="font-size:100px;font-family:Sacramento;margin-top:1rem">onodera</h1>
-        <p style="margin-top:-15px">Anime and manga database</p>
-        <br><br>
+    <p>Description</p>
+    <textarea name="description" placeholder="Give a nice description here" style="width:75%;height:20%"><%= description %></textarea>
+    <br><br>
 
-        <form action="/edit/anime/<%= id %>/submit" method="get">
-            <p>Title</p>
-            <input type="text" name="title" placeholder="Title goes here" value="<%= title %>" style="width:50%"></input>
-            <br><br>
-
-            <p>Description</p>
-            <textarea name="description" placeholder="Give a nice description here" style="width:75%;height:20%"><%= description %></textarea>
-            <br><br>
-
-            <button type="submit">Submit</button>
-        </form>
-
-        <br><br><br>
-
-        <p><b>Onodera</b> v<%= ONODERA_VERSION_NUMBER %> <%= ONODERA_VERSION_NAME %><br>lncndev 2021 - AGPLv3 - <a href="https://github.com/onoderaproject">Github</a></p>
-    </center>
-</body>
-
-</html>
+    <button type="submit">Submit</button>
+</form>

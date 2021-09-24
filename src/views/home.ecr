@@ -1,40 +1,14 @@
-<html>
-    <head>
-        <link href="/assets/css/bootstrap.css" rel="stylesheet">
-        <style>
-            @font-face { font-family: Sacramento; src: url('/assets/fonts/sacramento.ttf'); }
-            @font-face { font-family: Trueno; src: url('/assets/fonts/trueno.otf'); }
-            body {
-                font-family: Trueno;
-            }
-        </style>
-    </head>
+<form action="search" method="get">
+    <input type="text" placeholder="Search for anime..." name="q"></input>
+    <button type="submit">Search</button>
+</form>
 
-<body>
-    <center>
-        <h1 style="font-size:100px;font-family:Sacramento;margin-top:1rem">onodera</h1>
-        <p style="margin-top:-15px">Anime and manga database</p>
-        <br><br>
+<br><br>
 
-        <form action="search" method="get">
-            <input type="text" placeholder="Search for anime..." name="q"></input>
-            <button type="submit">Search</button>
-        </form>
-        <br><br>
+<h3>Modern.</h3>
+<h3>Fast.</h3>
+<h3>Private.</h3>
+<h3>Open.</h3>
+<br>
 
-        <h3>Modern.</h3>
-        <h3>Fast.</h3>
-        <h3>Private.</h3>
-        <h3>Open.</h3>
-        <br>
-
-        <p>Please consider contributing code, art, or anything we can use to help this project grow and thrive.</p>
-
-        <br><br><br>
-
-        <p><b>Onodera</b> v<%= ONODERA_VERSION_NUMBER %> <%= ONODERA_VERSION_NAME %><br>lncndev 2021 - AGPLv3 - <a href="https://github.com/onoderaproject">Github</a></p>
-        <%- if env.session.string?("token") -%><p>Logged in as <b><%= redis.hget("usertokens", env.session.string("token")) %></b></p><%- end -%>
-    </center>
-</body>
-
-</html>
+<p>Please consider contributing code, art, or anything we can use to help this project grow and thrive.</p>

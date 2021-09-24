@@ -1,37 +1,4 @@
-<html>
-    <head>
-        <link href="/assets/css/bootstrap.css" rel="stylesheet">
-        <style>
-            @font-face { font-family: Sacramento; src: url('/assets/fonts/sacramento.ttf'); }
-            @font-face { font-family: Trueno; src: url('/assets/fonts/trueno.otf'); }
-            body {
-                font-family: Trueno;
-            }
-        </style>
-    </head>
-
-<body>
-    <center>
-        <h1 style="font-size:100px;font-family:Sacramento;margin-top:1rem">onodera</h1>
-        <p style="margin-top:-15px">Anime and manga database</p>
-        <br><br>
-
-        <form action="/search" method="get">
-            <input type="text" placeholder="Search for anime..." name="q"></input>
-            <button type="submit">Search</button>
-        </form>
-        <br><br>
-
-        <%- results.each do |result| -%>
-        <%- puts result.to_s -%>
-        <h2><a href="/anime/<%= redis.get(result.to_s).to_s %>"><%= redis.hget("anime:" + redis.get(result.to_s).to_s, "title") %></h2>
-        <%- end -%>
-
-        <br><br><br>
-
-        <p><b>Onodera</b> v<%= ONODERA_VERSION_NUMBER %> <%= ONODERA_VERSION_NAME %><br>lncndev 2021 - AGPLv3 - <a href="https://github.com/onoderaproject">Github</a></p>
-        <%- if env.session.string?("token") -%><p>Logged in as <b><%= redis.hget("usertokens", env.session.string("token")) %></b></p><%- end -%>
-    </center>
-</body>
-
-</html>
+<%- results.each do |result| -%>
+<%- puts result.to_s -%>
+<h2><a href="/anime/<%= redis.get(result.to_s).to_s %>"><%= redis.hget("anime:" + redis.get(result.to_s).to_s, "title") %></h2>
+<%- end -%>

@@ -29,9 +29,6 @@ get "/auth/endpoint" do |env|
   "Authenticating..."
 
   if redis.sismember("users", username) == 1
-    puts Crypto::Bcrypt::Password.create(password)
-    puts redis.hget("user:" + username, "password_hash")
-
     # Check if password matches hash
     if Crypto::Bcrypt::Password.new(redis.hget("user:" + username, "password_hash").to_s).verify(password) == true
       # Set token on server

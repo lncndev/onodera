@@ -19,7 +19,7 @@ redis = Redis.new
 
 get "/" do |env|
   # Render home page
-  render "src/views/home.ecr"
+  render "src/views/home.ecr", "src/views/base.ecr"
 end
 
 get "/api/:action" do |env|
@@ -27,7 +27,7 @@ get "/api/:action" do |env|
   action = env.params.url["action"]
 
   # Render response
-  render "src/views/api.ecr"
+  render "src/views/api.ecr", "src/views/base.ecr"
 end
 
 get "/anime/:id" do |env|
@@ -39,7 +39,7 @@ get "/anime/:id" do |env|
   description = redis.hget("anime:" + id, "description")
 
   # Render anime page
-  render "src/views/anime.ecr"
+  render "src/views/anime.ecr", "src/views/base.ecr"
 end
 
 get "/edit/:type/:id" do |env|
@@ -49,7 +49,7 @@ get "/edit/:type/:id" do |env|
   description = redis.hget("anime:" + id, "description")
 
   # Render edit page
-  render "src/views/edit.ecr"
+  render "src/views/edit.ecr", "src/views/base.ecr"
 end
 
 get "/edit/:type/:id/submit" do |env|
@@ -71,5 +71,5 @@ require "./auth"
 
 get "/search" do |env|
   results = redis.keys("anime:*" + env.params.query["q"] + "*:id")
-  render "src/views/search.ecr"
+  render "src/views/search.ecr", "src/views/base.ecr"
 end

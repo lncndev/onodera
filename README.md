@@ -23,6 +23,7 @@ You'll have to build it yourself as Onodera is still in beta.
  - ~~Anime support~~
  - Characters support
  - Page edit approval
+ - Better data hygiene
 
 ### TODO before v2 Mizuhara
  - MAL scraper
