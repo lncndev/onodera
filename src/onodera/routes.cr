@@ -11,6 +11,9 @@ require "redis"
 require "kemal-session"
 require "html"
 
+# Require helpers
+require "./helpers"
+
 # Initialize database
 redis = Redis.new
 
