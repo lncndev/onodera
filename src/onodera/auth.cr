@@ -16,7 +16,7 @@ require "time"
 redis = Redis.new
 
 get "/auth" do |env|
-  render "src/views/auth.ecr", "src/view/base.ecr"
+  render "src/views/auth.ecr", "src/views/base.ecr"
 end
 
 post "/auth/endpoint" do |env|
