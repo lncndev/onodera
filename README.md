@@ -16,20 +16,38 @@ You'll have to build it yourself as Onodera is still in beta.
  4) `crystal build src/onodera.cr`
  5) `./onodera`
 
-## TODO before v1 Kukuru
+## TODO
+
+### TODO before v1 Kukuru
  - ~~Working auth~~
  - ~~Anime support~~
- - 
+ - Characters support
+ - Anime page edit approval and history
 
-## TODO before v2 Sayu
+### TODO before v2 Mizuhara
+ - MAL scraper
+ - Official hosted instance
+ - Art
+ - Episode support
+
+### TODO before v3 Nagatoro
  - Manga support
  - Make data open
    - Add data export
    - Add data import
    - Add data syncing
+ - Shim (installation and auto-update)
+
+### TODO before v4 Sumi
  - User profiles
- - Built-in dark mode
- - More advanced UI
+ - Built-in dark mode (use [DarkReader](https://darkreader.org) for now)
+ - Better UI
+ - Aki tour
+
+### TODO before v5 Sayu
+ - ML-powered "smart" recommendations (w/ Freemium)
+ - Recommendations
+ - And more
 
 ## Features I'd like to add some day
  - Decentralize the database
