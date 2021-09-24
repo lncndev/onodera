@@ -16,13 +16,13 @@ require "time"
 redis = Redis.new
 
 get "/auth" do |env|
-  render "src/views/auth.ecr"
+  render "src/views/auth.ecr", "src/view/base.ecr"
 end
 
-get "/auth/endpoint" do |env|
+post "/auth/endpoint" do |env|
   # Get params
-  username = env.params.query["username"]
-  password = env.params.query["password"]
+  username = env.params.body["username"]
+  password = env.params.body["password"]
 
   token = Random::Secure.random_bytes(128)
 
