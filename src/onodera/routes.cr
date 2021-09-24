@@ -58,10 +58,13 @@ get "/edit/:type/:id/submit" do |env|
   title = env.params.query["title"]
   description = env.params.query["description"]
 
+  # Get rid of old search term for proper data hygiene
+  redis.del("anime:" + redis.hget("anime:" + id, "title").to_s.downcase + ":id")
+
   # Submit edits
   redis.hset("anime:" + id, "title", HTML.escape(title))
   redis.hset("anime:" + id, "description", HTML.escape(description))
-  redis.set("anime:" + HTML.escape(title).to_s + ":id", id.to_s)
+  redis.set("anime:" + HTML.escape(title).to_s.downcase + ":id", id.to_s)
 
   # Redirect back to anime page
   env.redirect("/anime/" + id)
@@ -70,6 +73,6 @@ end
 require "./auth"
 
 get "/search" do |env|
-  results = redis.keys("anime:*" + env.params.query["q"] + "*:id")
+  results = redis.keys("anime:*" + env.params.query["q"].downcase + "*:id")
   render "src/views/search.ecr", "src/views/base.ecr"
 end
