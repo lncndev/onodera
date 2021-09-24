@@ -1,7 +1,7 @@
 <p align="center"><img src="https://raw.githubusercontent.com/onoderaproject/onodera/main/public/assets/images/logo/256.png" /></p>
 
 <h1 align="center">Onodera</h1>
-<h3 align="center">v0.4 "Lotte"</h3>
+<h3 align="center">v0.5 "Lotte"</h3>
 
 ---
 
@@ -22,13 +22,14 @@ You'll have to build it yourself as Onodera is still in beta.
  - ~~Working auth~~
  - ~~Anime support~~
  - Characters support
- - Anime page edit approval and history
+ - Page edit approval
 
 ### TODO before v2 Mizuhara
  - MAL scraper
  - Official hosted instance
  - Art
  - Episode support
+ - Page edit history
 
 ### TODO before v3 Nagatoro
  - Manga support
