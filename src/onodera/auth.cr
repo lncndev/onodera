@@ -26,8 +26,6 @@ post "/auth/endpoint" do |env|
 
   token = Random::Secure.random_bytes(128)
 
-  "Authenticating..."
-
   if redis.sismember("users", username) == 1
     # Check if password matches hash
     if Crypto::Bcrypt::Password.new(redis.hget("user:" + username, "password_hash").to_s).verify(password) == true
@@ -41,7 +39,7 @@ post "/auth/endpoint" do |env|
       # TODO: Redirect after auth complete
       env.redirect("/")
     else
-      "Bad password"
+      "Bad password <a href=\"/auth\">Back to login</a>"
     end
   else
     # Hash password

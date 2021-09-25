@@ -1,4 +1,3 @@
 <%- results.each do |result| -%>
-<%- puts result.to_s -%>
 <h2><a href="/anime/<%= redis.get(result.to_s).to_s %>"><%= redis.hget("anime:" + redis.get(result.to_s).to_s, "title") %></a></h2>
 <%- end -%>

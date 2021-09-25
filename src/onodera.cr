@@ -12,6 +12,16 @@ require "redis"
 # Require config
 require "../config"
 
+# Initialize database
+redis = Redis.new
+
+if redis.get("firstrun") == nil
+  # Set up DB
+  redis.set("animenextid", 0)
+  redis.set("characternextid", 0)
+  redis.set("manganextid", 0)
+end
+
 # Give sign of life
 puts "Starting Onodera"
 
