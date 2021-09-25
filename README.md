@@ -17,6 +17,15 @@ Onodera isn't meant to be self-hosted, but you can build it like so:
  6) Make sure Redis server is installed and running
  7) Run binary
 
+## Why use Onodera?
+Because it's...
+ - Fast
+ - Privacy-respecting
+   - No ads
+   - No trackers
+ - Transparent
+ - Open source
+
 ## TODO
 
 ### TODO before v1 Kukuru
