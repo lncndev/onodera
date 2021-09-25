@@ -14,7 +14,8 @@ Onodera isn't meant to be self-hosted, but you can build it like so:
  3) Change directory to `onodera`
  4) Checkout branch `prod`
  5) Build `src/onodera.cr`
- 6) Run binary
+ 6) Make sure Redis server is installed and running
+ 7) Run binary
 
 ## TODO
 
