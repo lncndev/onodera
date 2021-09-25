@@ -8,13 +8,13 @@
 Onodera is an anime and manga database similar to MAL (MyAnimeList.) Written in Crystal.
 
 ## Installation
-You'll have to build it yourself as Onodera is still in beta.
-
- 1) `yay -Sy redis crystal shards`
- 2) `git clone https://github.com/onoderproject/onodera`
- 3) `cd onodera`
- 4) `crystal build src/onodera.cr`
- 5) `./onodera`
+Onodera isn't meant to be self-hosted, but you can build it like so:
+ 1) Install Crystal compiler
+ 2) Clone project
+ 3) Change directory to `onodera`
+ 4) Checkout branch `prod`
+ 5) Build `src/onodera.cr`
+ 6) Run binary
 
 ## TODO
 
@@ -51,9 +51,6 @@ You'll have to build it yourself as Onodera is still in beta.
  - ML-powered "smart" recommendations (w/ Freemium)
  - Recommendations
  - And more
-
-## Features I'd like to add some day
- - Decentralize the database
 
 ## Contributing
 ### Fixes and other minor changes
