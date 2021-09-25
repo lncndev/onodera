@@ -12,7 +12,7 @@ Onodera isn't meant to be self-hosted, but you can build it like so:
  1) Install Crystal compiler
  2) Clone project
  3) Change directory to `onodera`
- 4) Checkout branch `prod`
+ 4) Verify you're on the `prod` branch as `main` may contain unstable and/or broken code
  5) Build `src/onodera.cr`
  6) Make sure Redis server is installed and running
  7) Run binary
