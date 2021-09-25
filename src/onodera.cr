@@ -25,11 +25,6 @@ end
 # Give sign of life
 puts "Starting Onodera"
 
-# Start Redis server
-Process.new("redis-server")
-puts "Started Redis server"
-redis = Redis.new
-
 # Require Kemal route handler
 require "./onodera/routes"
 

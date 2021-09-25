@@ -19,8 +19,8 @@ dependencies:
     github: onoderaproject/tasker
   kemal-auth-token:
     github: onoderaproject/kemal-auth-token
-  slang:
-    github: jeromegn/slang
+  jikancr:
+    github: onoderaproject/jikancr
 
 crystal: 1.1.1
 
