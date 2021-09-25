@@ -23,7 +23,7 @@ Onodera isn't meant to be self-hosted, but you can build it like so:
  - ~~Anime support~~
  - Characters support
  - Page edit approval
- - Better data hygiene
+ - ~~Better data hygiene~~
  - Fix Docker image
 
 ### TODO before v2 Mizuhara
