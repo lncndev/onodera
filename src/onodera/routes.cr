@@ -30,9 +30,9 @@ get "/api/:action" do |env|
   render "src/views/api.ecr", "src/views/base.ecr"
 end
 
-require "./anime"
-
 require "./auth"
+
+require "./pages"
 
 get "/search" do |env|
   results = redis.keys("anime:*" + env.params.query["q"].downcase + "*:id")

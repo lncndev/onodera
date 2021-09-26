@@ -1,6 +1,18 @@
-<h2><%= redis.hget("anime:" + env.params.url["id"], "title") %></h2>
+<h2><%= title %></h2>
 <%- if redis.hget("anime:" + env.params.url["id"], "releaseyear") != nil -%><h5><%= redis.hget("anime:" + env.params.url["id"], "releaseyear") %></h5><%- end -%>
-<%- if redis.hget("anime:" + env.params.url["id"], "description") != nil -%><p style="max-width:75%"><%= redis.hget("anime:" + env.params.url["id"], "description") %></p><%- end -%>
-<%- if redis.hget("anime:" + env.params.url["id"], "subsplease") != nil -%><h4><a href="<%= redis.hget("anime:" + env.params.url["id"], "subsplease") %>">View on SubsPlease</a></h4><%- end -%>
 <br>
-<p><a href="/edit/anime/<%= env.params.url["id"] %>">Edit</a></p>
+
+<%- if description != nil -%><p style="max-width:75%"><%= description %></p><%- end -%>
+<br>
+
+<%- if redis.hget("anime:" + env.params.url["id"], "subsplease") != nil -%><h4><a href="<%= redis.hget("anime:" + env.params.url["id"], "subsplease") %>" target="_blank">View on SubsPlease</a></h4><%- end -%>
+<br>
+
+<h3>Characters</h3>
+<%- characters.each do |character| -%>
+<a href="/character/<%= character %>" target="_blank"><%= redis.hget("character:" + character.to_s, "name") %></a>
+<%- end -%>
+<br>
+
+<br>
+<p><a href="/edit/anime/<%= env.params.url["id"] %>">Edit</a> - <a href="/edit/character/<%= redis.get("characternextid") %>?sourcetype=anime&sourceid=<%= env.params.url["id"] %>">Add Character</a></p>

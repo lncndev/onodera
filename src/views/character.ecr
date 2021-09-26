@@ -1,4 +1,4 @@
-<h2><%= redis.hget("anime:" + env.params.url["id"], "title") %></h2>
-<%- if redis.hget("anime:" + env.params.url["id"], "description") != nil -%><p style="max-width:75%"><%= redis.hget("anime:" + env.params.url["id"], "description") %></p><%- end -%>
+<h2><%= name %></h2>
+<%- if bio != nil -%><p style="max-width:75%"><%= bio %></p><%- end -%>
 <br>
-<p><a href="/edit/anime/<%= env.params.url["id"] %>">Edit</a></p>
+<p><a href="/edit/character/<%= id %>">Edit</a></p>

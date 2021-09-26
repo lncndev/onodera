@@ -1,15 +1,29 @@
-<form action="/edit/anime/<%= id %>/submit" method="get">
+<form action="/edit/<%= type %>/<%= id %>/submit" method="get">
+
+<%- case type; when "anime" -%>
     <p>Title</p>
-    <input type="text" name="title" placeholder="Title goes here" value="<%= title %>" style="width:50%"></input>
+    <input type="text" name="title" placeholder="Bokutachi no Remake" value="<%= title %>" style="width:50%"></input>
     <br><br>
 
     <p>Description</p>
-    <textarea name="description" placeholder="Give a nice description here" style="width:75%;height:20%"><%= description %></textarea>
+    <textarea name="description" placeholder="" style="width:75%;height:20%"><%= description %></textarea>
     <br><br>
 
     <p>SubsPlease Link</p>
-    <input type="text" name="subsplease" placeholder="Paste SubsPlease URL here" value="<%= subsplease %>" style="width:50%"></input>
+    <input type="text" name="subsplease" placeholder="https://subsplease.org/shows/bokutachi-no-remake" value="<%= subsplease %>" style="width:50%"></input>
     <br><br>
+<%- when "character" -%>
+    <p>Name</p>
+    <input type="text" name="name" placeholder="Aki Shino" value="<%= name %>" style="width:50%"></input>
+    <br><br>
+
+    <p>Bio</p>
+    <textarea name="bio" placeholder="She has short purple hair and loves to draw." style="width:75%;height:20%"><%= bio %></textarea>
+    <br><br>
+
+    <input name="sourcetype" value="<%= env.params.query["sourcetype"] %>" hidden />
+    <input name="sourceid" value="<%= env.params.query["sourceid"] %>" hidden />
+<%- end -%>
 
     <button type="submit">Submit</button>
 </form>
