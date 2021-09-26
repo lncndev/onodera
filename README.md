@@ -1,7 +1,7 @@
 <p align="center"><img src="https://raw.githubusercontent.com/onoderaproject/onodera/main/public/assets/images/logo/256.png" /></p>
 
 <h1 align="center">Onodera</h1>
-<h3 align="center">v0.6 "Lotte"</h3>
+<h3 align="center">v0.7 "Lotte"</h3>
 
 ---
 
@@ -31,7 +31,7 @@ Because it's...
 ### TODO before v1 Kukuru
  - ~~Working auth~~
  - ~~Anime support~~
- - Characters support
+ - ~~Characters support~~
  - Page edit approval
  - ~~Better data hygiene~~
  - Fix Docker image

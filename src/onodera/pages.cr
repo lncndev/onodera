@@ -100,6 +100,8 @@ get "/edit/:type/:id/submit" do |env|
     redis.hset("anime:" + id, "description", HTML.escape(description.to_s))
     redis.hset("anime:" + id, "subsplease", subsplease)
     redis.set("anime:" + HTML.escape(title.to_s).to_s.downcase + ":id", id.to_s)
+    redis.incrby("animenextid", 1)
+    env.redirect("/anime/" + id)
   when "character"
     redis.hset("character:" + id, "image", HTML.escape(image.to_s))
     redis.hset("character:" + id, "name", HTML.escape(name.to_s))
@@ -107,8 +109,7 @@ get "/edit/:type/:id/submit" do |env|
     redis.set("character:" + HTML.escape(name.to_s).to_s.downcase + ":id", id.to_s)
     redis.sadd(sourcetype.to_s + ":" + sourceid.to_s + ":" + "characters", id.to_s)
     redis.incrby("characternextid", 1)
+    env.redirect("/" + sourcetype.to_s + "/" + sourceid.to_s)
   end
 
-  # Redirect back to anime page
-  env.redirect("/" + type + "/" + id)
 end

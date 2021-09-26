@@ -1,14 +1,11 @@
-<form action="search" method="get">
-    <input type="text" placeholder="Search for anime..." name="q"></input>
-    <button type="submit">Search</button>
+<form action="search" method="get" style="max-width:50%">
+    <input type="text" placeholder="Search for anime..." name="q" class="form-control"></input><br>
+    <button type="submit" class="form-control btn btn-primary" style="max-width:50%">Search</button>
 </form>
 
 <br><br>
 
-<h3>Modern.</h3>
-<h3>Fast.</h3>
-<h3>Private.</h3>
-<h3>Open.</h3>
+<h3><a href="/edit/anime/<%= redis.get("animenextid") %>">Add Anime</a></h3>
 <br>
 
 <p>Please consider contributing code, art, or anything we can use to help this project grow and thrive.</p>
