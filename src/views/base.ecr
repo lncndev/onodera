@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <link href="/assets/css/bootstrap.css" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/@mdi/font@6.1.95/css/materialdesignicons.min.css" rel="stylesheet">
+        <style>
+            @font-face { font-family: Sacramento; src: url('/assets/fonts/sacramento.ttf'); }
+            @font-face { font-family: Trueno; src: url('/assets/fonts/trueno.otf'); }
+            body {
+                font-family: Trueno;
+            }
+        </style>
+    </head>
+
+<body>
+    <center>
+        <h1 style="font-size:100px;font-family:Sacramento;margin-top:1rem"><img style="margin-top:-3rem" src="/assets/images/logo/512.png" height="100px" width="100px" />onodera</h1>
+        <h3 style="margin-top:-15px"> <a href="/"><i class="mdi mdi-home"></i></a>   <a href="/auth"><i class="mdi mdi-login"></i></a> </h3>
+        <br><br>
+
+            <%= content %>
+
+        <br><br><br>
+
+        <p><b>Onodera</b> v<%= ONODERA_VERSION_NUMBER %> <%= ONODERA_VERSION_NAME %><br>Made with <3 and Crystal - AGPLv3 - <a href="https://github.com/onoderaproject">Github</a></p>
+        <%- if env.session.string?("token") -%><p>Logged in as <b><%= redis.hget("usertokens", env.session.string("token")) %></b></p><%- end -%>
+    </center>
+</body>
+
+</html>

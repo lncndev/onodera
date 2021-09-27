@@ -1,30 +1,4 @@
-<html>
-    <head>
-        <link href="/assets/css/bootstrap.css" rel="stylesheet">
-        <style>
-            @font-face { font-family: Sacramento; src: url('/assets/fonts/sacramento.ttf'); }
-            @font-face { font-family: Trueno; src: url('/assets/fonts/trueno.otf'); }
-            body {
-                font-family: Trueno;
-            }
-        </style>
-    </head>
-
-<body>
-    <center>
-        <h1 style="font-size:100px;font-family:Sacramento;margin-top:1rem">onodera</h1>
-        <p style="margin-top:-15px">Anime and manga database</p>
-        <br><br>
-
-        <h2><%= redis.hget("anime:" + env.params.url["id"], "title") %></h2>
-        <%- if redis.hget("anime:" + env.params.url["id"], "description") != nil -%><p style="max-width:75%"><%= redis.hget("anime:" + env.params.url["id"], "description") %></p><%- end -%>
-        <br>
-        <p><a href="/edit/anime/<%= env.params.url["id"] %>">Edit</a></p>
-
-        <br><br><br>
-
-        <p><b>Onodera</b> v<%= ONODERA_VERSION_NUMBER %> <%= ONODERA_VERSION_NAME %><br>lncndev 2021 - AGPLv3 - <a href="https://github.com/onoderaproject">Github</a></p>
-    </center>
-</body>
-
-</html>
+<h2><%= name %></h2>
+<%- if bio != nil -%><p style="max-width:75%"><%= bio %></p><%- end -%>
+<br>
+<p><a href="/edit/character/<%= id %>">Edit</a></p>

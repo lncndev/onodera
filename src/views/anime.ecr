@@ -1,30 +1,18 @@
-<html>
-    <head>
-        <link href="/assets/css/bootstrap.css" rel="stylesheet">
-        <style>
-            @font-face { font-family: Sacramento; src: url('/assets/fonts/sacramento.ttf'); }
-            @font-face { font-family: Trueno; src: url('/assets/fonts/trueno.otf'); }
-            body {
-                font-family: Trueno;
-            }
-        </style>
-    </head>
+<h2><%= title %></h2>
+<%- if redis.hget("anime:" + env.params.url["id"], "releaseyear") != nil -%><h5><%= redis.hget("anime:" + env.params.url["id"], "releaseyear") %></h5><%- end -%>
+<br>
 
-<body>
-    <center>
-        <h1 style="font-size:100px;font-family:Sacramento;margin-top:1rem">onodera</h1>
-        <p style="margin-top:-15px">Anime and manga database</p>
-        <br><br>
+<%- if description != nil -%><p style="max-width:75%"><%= description %></p><%- end -%>
+<br>
 
-        <h2><%= redis.hget("anime:" + env.params.url["id"], "title") %></h2>
-        <%- if redis.hget("anime:" + env.params.url["id"], "description") != nil -%><p style="max-width:75%"><%= redis.hget("anime:" + env.params.url["id"], "description") %></p><%- end -%>
-        <br>
-        <p><a href="/edit/anime/<%= env.params.url["id"] %>">Edit</a></p>
+<%- if redis.hget("anime:" + env.params.url["id"], "subsplease") != nil -%><h4><a href="<%= redis.hget("anime:" + env.params.url["id"], "subsplease") %>" target="_blank">View on SubsPlease</a></h4><%- end -%>
+<br>
 
-        <br><br><br>
+<h3>Characters</h3>
+<%- characters.each do |character| -%>
+<a href="/character/<%= character %>" target="_blank"><%= redis.hget("character:" + character.to_s, "name") %></a>
+<%- end -%>
+<br>
 
-        <p><b>Onodera</b> v<%= ONODERA_VERSION_NUMBER %> <%= ONODERA_VERSION_NAME %><br>lncndev 2021 - AGPLv3 - <a href="https://github.com/onoderaproject">Github</a></p>
-    </center>
-</body>
-
-</html>
+<br>
+<p><a href="/edit/anime/<%= env.params.url["id"] %>">Edit</a> - <a href="/edit/character/<%= redis.get("characternextid") %>?sourcetype=anime&sourceid=<%= env.params.url["id"] %>">Add Character</a></p>

@@ -12,13 +12,11 @@ require "redis"
 # Require config
 require "../config"
 
+# Initialize database
+redis = Redis.new
+
 # Give sign of life
 puts "Starting Onodera"
-
-# Start Redis server
-Process.new("redis-server")
-puts "Started Redis server"
-redis = Redis.new
 
 # Require Kemal route handler
 require "./onodera/routes"
