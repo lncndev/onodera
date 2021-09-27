@@ -32,7 +32,6 @@ Because it's...
  - ~~Working auth~~
  - ~~Anime support~~
  - ~~Characters support~~
- - Page edit approval
  - ~~Better data hygiene~~
  - Fix Docker image
 
