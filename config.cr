@@ -3,7 +3,7 @@
 #
 
 # Version info
-ONODERA_VERSION_NUMBER = "0.7"
+ONODERA_VERSION_NUMBER = "0.8"
 ONODERA_VERSION_NAME   = "Lotte"
 
 # Site info
