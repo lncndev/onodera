@@ -8,4 +8,5 @@ COPY . .
 RUN shards install
 RUN crystal build src/onodera.cr
 
+RUN chmod +x ./entrypoint.sh
 ENTRYPOINT ./entrypoint.sh
