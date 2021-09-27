@@ -8,4 +8,4 @@ COPY . .
 RUN shards install
 RUN crystal build src/onodera.cr
 
-ENTRYPOINT entrypoint.sh
+ENTRYPOINT ./entrypoint.sh
