@@ -52,7 +52,7 @@ Because it is and always will be:
    - Add data export
    - Add data import
    - Add data syncing
- - Shim (installation and auto-update)
+ - ~~Shim (installation and auto-update)~~ [Rinne](https://github.com/onoderaproject/rinne)
 
 ### TODO before v4 Sumi
  - User profiles
