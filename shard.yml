@@ -1,5 +1,5 @@
 name: onodera
-version: 0.7.0
+version: 0.9.0
 
 authors:
   - lncndev <lincoln@chuuo.net>
@@ -14,13 +14,11 @@ dependencies:
   kemal-session:
     github: kemalcr/kemal-session
   redis:
-    github: onoderaproject/crystal-redis
-  tasker:
-    github: onoderaproject/tasker
-  kemal-auth-token:
-    github: onoderaproject/kemal-auth-token
+    github: stefanwille/crystal-redis
   jikancr:
     github: onoderaproject/jikancr
+  mosquito:
+    github: mosquito-cr/mosquito
 
 crystal: 1.1.1
 

@@ -2,28 +2,47 @@
 
 <%- case type; when "anime" -%>
     <p>Title</p>
-    <input type="text" name="title" placeholder="Bokutachi no Remake" value="<%= title %>" style="width:50%"></input>
+    <input type="text" name="title" class="form-control" placeholder="Bokutachi no Remake" value="<%= title %>" style="width:50%"></input>
+    <br><br>
+
+    <p>Image URL</p>
+    <input type="text" name="image" class="form-control" placeholder="https://s3.us-east-2.wasabisys.com/ono.../bokutachi-no-remake.png" value="<%= image %>" style="width:50%"></input>
+    <br><br>
+
+    <p>Release Year</p>
+    <input type="text" name="releaseyear" class="form-control" placeholder="2021" value="<%= releaseyear %>" style="width:20%"></input>
+    <br><br>
+
+    <p>Age Rating</p>
+    <select name="agerating" class="form-control" aria-label="Select age rating" style="width:20%">
+        <option value="<%= agerating %>" selected>Select age rating</option>
+        <option value="G/PG">G or PG</option>
+        <option value="PG-13/TV-14">PG-13 or TV-14</option>
+        <option value="R">R</option>
+        <option value="MA/TV-MA">MA or TV-MA</option>
+        <option value="Hentai">XXX</option>
+    </select>
     <br><br>
 
     <p>Description</p>
-    <textarea name="description" placeholder="" style="width:75%;height:20%"><%= description %></textarea>
+    <textarea name="description" class="form-control" placeholder="A 28-year-old game developer name Hashiba Kyouya..." style="width:75%;height:20%"><%= description %></textarea>
     <br><br>
 
     <p>SubsPlease Link</p>
-    <input type="text" name="subsplease" placeholder="https://subsplease.org/shows/bokutachi-no-remake" value="<%= subsplease %>" style="width:50%"></input>
+    <input type="text" name="subsplease" class="form-control" placeholder="https://subsplease.org/shows/bokutachi-no-remake" value="<%= subsplease %>" style="width:50%"></input>
     <br><br>
 <%- when "character" -%>
     <p>Name</p>
-    <input type="text" name="name" placeholder="Aki Shino" value="<%= name %>" style="width:50%"></input>
+    <input type="text" name="name" class="form-control" placeholder="Aki Shino" value="<%= name %>" style="width:50%"></input>
     <br><br>
 
     <p>Bio</p>
-    <textarea name="bio" placeholder="She has short purple hair and loves to draw." style="width:75%;height:20%"><%= bio %></textarea>
+    <textarea name="bio" class="form-control" placeholder="She has short purple hair and loves to draw." style="width:75%;height:20%"><%= bio %></textarea>
     <br><br>
 
     <input name="sourcetype" value="<%= env.params.query["sourcetype"] %>" hidden />
     <input name="sourceid" value="<%= env.params.query["sourceid"] %>" hidden />
 <%- end -%>
 
-    <button type="submit">Submit</button>
+    <button class="btn btn-primary" type="submit">Submit</button>
 </form>

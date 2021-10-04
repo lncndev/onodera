@@ -15,6 +15,17 @@ require "../config"
 # Initialize database
 redis = Redis.new
 
+# Require init script
+require "./onodera/init"
+
+# Require helpers
+require "./onodera/helpers"
+
+# Require task handler
+require "./onodera/tasks"
+
+module Onodera; end
+
 # Give sign of life
 puts "Starting Onodera"
 

@@ -1,7 +1,7 @@
 <p align="center"><img src="https://raw.githubusercontent.com/onoderaproject/onodera/main/public/assets/images/logo/256.png" /></p>
 
 <h1 align="center">Onodera</h1>
-<h3 align="center">v0.7 "Lotte"</h3>
+<h3 align="center">v0.9 "Sayu"</h3>
 
 ---
 
@@ -18,13 +18,14 @@ Onodera isn't meant to be self-hosted, but you can build it like so:
  7) Run binary
 
 ## Why use Onodera?
-Because it's...
+Because it is and always will be:
  - Fast
  - Privacy-respecting
    - No ads
    - No trackers
  - Transparent
  - Open source
+ - Free for everyone (extra functionality with freemium)
 
 ## TODO
 
@@ -32,13 +33,15 @@ Because it's...
  - ~~Working auth~~
  - ~~Anime support~~
  - ~~Characters support~~
- - Page edit approval
  - ~~Better data hygiene~~
- - Fix Docker image
+ - ~~Fix Docker image~~
 
 ### TODO before v2 Mizuhara
  - MAL scraper
  - Official hosted instance
+ - Onodera Tsukamu: Torrent grabber and downloader
+   - Tsukamu Server: Finds and keeps DB of torrents while not actually storing any torrents or magnet links (will be part of Onodera server)
+   - Tsukamu Client: Asks server for torrent and downloads it
  - Art
  - Episode support
  - Page edit history
@@ -49,7 +52,7 @@ Because it's...
    - Add data export
    - Add data import
    - Add data syncing
- - Shim (installation and auto-update)
+ - ~~Shim (installation and auto-update)~~ [Rinne](https://github.com/onoderaproject/rinne)
 
 ### TODO before v4 Sumi
  - User profiles
@@ -79,13 +82,12 @@ Because it's...
 ## Contributors
  - [lncndev](https://gitlab.com/lncn) - creator and maintainer
 
-## Additional info
+## Licensing
+
+### Software
+lncndev 2021
+AGPLv3
 
 ### Logo
-
-#### About
-The logo features our mascot, Aki, wearing a t-shirt with a simplified version of the Crystal logo printed on it
-
-#### Copyright info
 lncndev 2021
 CC-BY-SA

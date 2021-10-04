@@ -34,6 +34,8 @@ require "./auth"
 
 require "./pages"
 
+require "./scraper"
+
 get "/search" do |env|
   results = redis.keys("anime:*" + env.params.query["q"].downcase + "*:id")
   render "src/views/search.ecr", "src/views/base.ecr"

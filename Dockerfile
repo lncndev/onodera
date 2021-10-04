@@ -1,6 +1,6 @@
-FROM archlinux
+FROM crystallang/crystal:1.1.1-alpine
 
-RUN pacman -Syu --noconfirm redis crystal shards
+RUN apk add redis
 
 WORKDIR /app
 COPY . .
@@ -8,5 +8,5 @@ COPY . .
 RUN shards install
 RUN crystal build src/onodera.cr
 
-WORKDIR /
-ENTRYPOINT /app/onodera
+RUN chmod +x ./entrypoint.sh
+ENTRYPOINT ./entrypoint.sh
