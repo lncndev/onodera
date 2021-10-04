@@ -26,6 +26,21 @@ get "/anime/:id" do |env|
   title = redis.hget("anime:" + id, "title")
   description = redis.hget("anime:" + id, "description")
   characters = redis.smembers("anime:" + id + ":characters")
+  release_year = redis.hget("anime:" + id, "releaseyear")
+  age_rating = redis.hget("anime:" + id, "agerating")
+
+  case age_rating
+  when "G/PG"
+    age_rating_badge_color = "success"
+  when "PG-13/TV-14"
+    age_rating_badge_color = "primary"
+  when "R"
+    age_rating_badge_color = "warning"
+  when "MA/TV-MA"
+    age_rating_badge_color = "warning"
+  when "Hentai"
+    age_rating_badge_color = "danger"
+  end
 
   # Render anime page
   render "src/views/anime.ecr", "src/views/base.ecr"
@@ -55,9 +70,13 @@ get "/edit/:type/:id" do |env|
     title = redis.hget("anime:" + id, "title")
     description = redis.hget("anime:" + id, "description")
     subsplease = redis.hget("anime:" + id, "subsplease")
+    image = redis.hget("anime:" + id, "image")
+    releaseyear = redis.hget("anime:" + id, "releaseyear")
+    agerating = redis.hget("anime:" + id, "agerating")
   when "character"
     name = redis.hget("character:" + id, "name")
     bio = redis.hget("character:" + id, "bio")
+    image = redis.hget("character:" + id, "image")
   end
 
   # Render edit page
@@ -76,40 +95,31 @@ get "/edit/:type/:id/submit" do |env|
     title = env.params.query["title"].to_s
     description = env.params.query["description"]?.to_s
     subsplease = env.params.query["subsplease"]?.to_s
+    image = env.params.query["image"]?.to_s
+    releaseyear = env.params.query["releaseyear"]?.to_s
+    mal = env.params.query["mal"]?.to_s
+    agerating = env.params.query["agerating"]?.to_s
   when "character"
     name = env.params.query["name"].to_s
     bio = env.params.query["bio"]?.to_s
+    image = env.params.query["image"]?.to_s
     sourceid = env.params.query["sourceid"].to_s
     sourcetype = env.params.query["sourcetype"].to_s
   end
 
   # Get rid of old search term for proper data hygiene
-  redis.del(type + ":" + redis.hget(type + ":" + id, case type; when "anime"; "title"; when "character"; "name"; end).to_s.downcase + ":id")
-
-  # Check if already exists
-  if redis.hget(type + ":" + id, "title") == nil
-    # Increment nextid for anime
-    redis.incrby(type + "nextid", 1)
-  end
+  redis.del(type + ":" + redis.hget(type + ":" + id, case type
+  when "anime"    ; "title"
+  when "character"; "name"
+  end).to_s.downcase + ":id")
 
   # Submit edits
   case type
   when "anime"
-    redis.hset("anime:" + id, "image", HTML.escape(image.to_s))
-    redis.hset("anime:" + id, "title", HTML.escape(title.to_s))
-    redis.hset("anime:" + id, "description", HTML.escape(description.to_s))
-    redis.hset("anime:" + id, "subsplease", subsplease)
-    redis.set("anime:" + HTML.escape(title.to_s).to_s.downcase + ":id", id.to_s)
-    redis.incrby("animenextid", 1)
+    Onodera::Edit.anime(id, title, description, image, subsplease, releaseyear, mal, agerating)
     env.redirect("/anime/" + id)
   when "character"
-    redis.hset("character:" + id, "image", HTML.escape(image.to_s))
-    redis.hset("character:" + id, "name", HTML.escape(name.to_s))
-    redis.hset("character:" + id, "bio", HTML.escape(bio.to_s))
-    redis.set("character:" + HTML.escape(name.to_s).to_s.downcase + ":id", id.to_s)
-    redis.sadd(sourcetype.to_s + ":" + sourceid.to_s + ":" + "characters", id.to_s)
-    redis.incrby("characternextid", 1)
+    Onodera::Edit.character(id, name, sourcetype, sourceid, bio, image)
     env.redirect("/" + sourcetype.to_s + "/" + sourceid.to_s)
   end
-
 end

@@ -1,18 +1,30 @@
-<h2><%= title %></h2>
-<%- if redis.hget("anime:" + env.params.url["id"], "releaseyear") != nil -%><h5><%= redis.hget("anime:" + env.params.url["id"], "releaseyear") %></h5><%- end -%>
-<br>
-
-<%- if description != nil -%><p style="max-width:75%"><%= description %></p><%- end -%>
-<br>
-
-<%- if redis.hget("anime:" + env.params.url["id"], "subsplease") != nil -%><h4><a href="<%= redis.hget("anime:" + env.params.url["id"], "subsplease") %>" target="_blank">View on SubsPlease</a></h4><%- end -%>
-<br>
-
-<h3>Characters</h3>
-<%- characters.each do |character| -%>
-<a href="/character/<%= character %>" target="_blank"><%= redis.hget("character:" + character.to_s, "name") %></a>
+<%- if image.to_s.empty? != true -%>
+    <img src="<%= image %>" style="max-height:300px" />
+    <br><br>
 <%- end -%>
+
+<h2><%= title %></h2>
+
+<h5><span class="badge bg-primary"><%= release_year %></span> <span class="badge bg-<%= age_rating_badge_color %>"><%= age_rating %></span></h5>
 <br>
+
+<%- if description.to_s.empty? != true -%>
+    <p style="max-width:75%"><%= description %></p>
+    <br>
+<%- end -%>
+
+<%- if redis.hget("anime:" + env.params.url["id"], "subsplease").to_s.empty? != true -%>
+    <h4><a href="<%= redis.hget("anime:" + env.params.url["id"], "subsplease") %>" target="_blank">View on SubsPlease</a></h4>
+    <br>
+<%- end -%>
+
+<%- if characters.empty? != true -%>
+    <h3>Characters</h3>
+    <%- characters.each do |character| -%>
+        <a href="/character/<%= character %>" target="_blank"><%= redis.hget("character:" + character.to_s, "name") %></a>
+    <%- end -%>
+    <br>
+<%- end -%>
 
 <br>
 <p><a href="/edit/anime/<%= env.params.url["id"] %>">Edit</a> - <a href="/edit/character/<%= redis.get("characternextid") %>?sourcetype=anime&sourceid=<%= env.params.url["id"] %>">Add Character</a></p>

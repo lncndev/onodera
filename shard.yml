@@ -15,12 +15,10 @@ dependencies:
     github: kemalcr/kemal-session
   redis:
     github: onoderaproject/crystal-redis
-  tasker:
-    github: onoderaproject/tasker
-  kemal-auth-token:
-    github: onoderaproject/kemal-auth-token
   jikancr:
     github: onoderaproject/jikancr
+  mosquito:
+    github: mosquito-cr/mosquito
 
 crystal: 1.1.1
 

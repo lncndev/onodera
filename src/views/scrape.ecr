@@ -1,0 +1,14 @@
+<h2>MAL Scraper</h2>
+<p>Scrape an MAL page into Onodera's database</p>
+<br>
+
+<form action="/scrape/anime/submit" method="post" style="width:50%">
+    <h3>MAL Search Query</h3>
+    <input type="text" name="query" placeholder="Bokutachi no Remake" class="form-control"></input>
+    <br>
+
+    <button type="submit" class="form-control btn btn-primary" style="max-width:50%">Scrape</button>
+</form>
+<br>
+
+<p>Due to API limitations, the MAL page won't be scraped immediately.<br>Your request will be added to the queue and we'll get to it as soon as we can.</p>
