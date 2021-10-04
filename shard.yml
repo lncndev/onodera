@@ -14,7 +14,7 @@ dependencies:
   kemal-session:
     github: kemalcr/kemal-session
   redis:
-    github: onoderaproject/crystal-redis
+    github: stefanwille/crystal-redis
   jikancr:
     github: onoderaproject/jikancr
   mosquito:
