@@ -20,6 +20,6 @@ class ScrapeTasks::ShowPage < MainLayout
   end
 
   def render_scrape_task_fields
-        text scrape_task.mal_id.to_s
-      end
+    text scrape_task.mal_id.to_s
   end
+end

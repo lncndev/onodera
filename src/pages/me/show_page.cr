@@ -8,7 +8,7 @@ class Me::ShowPage < MainLayout
     h3 "What would you like to do?"
     h4 do
       link "Find Anime", Anime::Index; br
-      link "Add Anime", Anime::New;br
+      link "Add Anime", Anime::New; br
       link "Scrape MAL to Onodera", ScrapeTasks::New
     end
   end
