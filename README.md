@@ -37,8 +37,9 @@ Because it is and always will be:
  - ~~Fix Docker image~~
 
 ### TODO before v2 Mizuhara
- - MAL scraper
- - Official hosted instance
+ - ~~MAL scraper~~
+ - ~~Official hosted instance~~
+ - Port to [Lucky](https://luckyframework.org)
  - Onodera Tsukamu: Torrent grabber and downloader
    - Tsukamu Server: Finds and keeps DB of torrents while not actually storing any torrents or magnet links (will be part of Onodera server)
    - Tsukamu Client: Asks server for torrent and downloads it
