@@ -1,5 +1,5 @@
 class ScrapeTasks::Index < BrowserAction
-  get "/scrape_tasks" do
+  get "/scrape" do
     html IndexPage, scrape_tasks: ScrapeTaskQuery.new
   end
 end

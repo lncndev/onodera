@@ -6,8 +6,11 @@ class Anime::ShowPage < MainLayout
     link "Back to all anime", Anime::Index
     br; br
 
-    img src: anime.image_url, style: "max-height:300px"
-    h1 anime.title
+    if anime.image_url.to_s.empty? != true
+      img src: HTML.escape(anime.image_url.to_s), style: "max-height:300px"
+    end
+    br; br
+    h1 HTML.escape(anime.title.to_s)
     render_anime_fields
 
     br
@@ -17,14 +20,10 @@ class Anime::ShowPage < MainLayout
   def render_actions
     section do
       link "Edit", Anime::Edit.with(anime.id)
-      text " | "
-      link "Delete",
-        Anime::Delete.with(anime.id),
-        data_confirm: "Are you sure?"
     end
   end
 
   def render_anime_fields
-    para anime.description.to_s, style: "max-width:70%"
+    para HTML.escape(anime.description.to_s), style: "max-width:70%"
   end
 end

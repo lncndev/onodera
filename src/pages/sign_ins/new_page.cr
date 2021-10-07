@@ -9,13 +9,16 @@ class SignIns::NewPage < AuthLayout
   private def render_sign_in_form(op)
     form_for SignIns::Create do
       sign_in_fields(op)
-      submit "Sign In", flow_id: "sign-in-button"
+      submit "Sign In", flow_id: "sign-in-button", class: "btn btn-primary"
     end
-    link "Sign up", to: SignUps::New
+    para do
+      text "Don't have an account yet? "
+      link "Create one!", to: SignUps::New
+    end
   end
 
   private def sign_in_fields(op)
-    mount Shared::Field, attribute: op.email, label_text: "Email", &.email_input(autofocus: "true")
-    mount Shared::Field, attribute: op.password, label_text: "Password", &.password_input
+    mount Shared::Field, attribute: op.email, label_text: "Email", &.email_input(autofocus: "true"); br
+    mount Shared::Field, attribute: op.password, label_text: "Password", &.password_input; br
   end
 end

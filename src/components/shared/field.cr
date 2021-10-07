@@ -43,7 +43,7 @@ class Shared::Field(T) < BaseComponent
     #    tag_defaults field: attribute, class: "input"
     #
     # Will add the class "input" to the generated HTML.
-    tag_defaults field: attribute do |tag_builder|
+    tag_defaults field: attribute, class: "form-input", style: "max-width:70%" do |tag_builder|
       yield tag_builder
     end
 
@@ -52,6 +52,6 @@ class Shared::Field(T) < BaseComponent
 
   # Use a text_input by default
   def render
-    render &.text_input(replace_class: "form-input")
+    render &.text_input
   end
 end

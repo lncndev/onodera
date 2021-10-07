@@ -1,6 +1,6 @@
 class ScrapeTasks::Create < BrowserAction
-  post "/scrape_tasks" do
-    SaveScrapeTask.create(params) do |operation, scrape_task|
+  post "/scrape" do
+    SaveScrapeTask.create(mal_id: JSON.parse(Jikan.search("anime", params.from_form_data["scrape_task:mal_id"].to_s.gsub(" ", "+")).to_s)["results"][0]["mal_id"].to_s) do |operation, scrape_task|
       if scrape_task
         flash.success = "The record has been saved"
         redirect Show.with(scrape_task.id)

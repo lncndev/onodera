@@ -13,7 +13,7 @@ class Anime::NewPage < MainLayout
       # Edit fields in src/components/anime/form_fields.cr
       mount Anime::FormFields, op
 
-      submit "Save", data_disable_with: "Saving..."
+      submit "Save", data_disable_with: "Saving...", style: "btn btn-primary"
     end
   end
 end

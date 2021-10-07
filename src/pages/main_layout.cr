@@ -33,16 +33,19 @@ abstract class MainLayout
       css_link asset("css/app.css"), data_turbolinks_track: "reload"
     end
     tag "center" do
-      h1 style: "font-size:150px;font-family:Sacramento;margin-top:1rem" do
+      h1 style: "font-size:100px;font-family:Sacramento;margin-top:1rem" do
         # img height: "100px", src: "/assets/images/logo/512.png", style: "margin-top:-3rem", width: "100px"
-        text "onodera"
+        text "onodera"; br
       end
       h3 style: "margin-top:-65px" do
-        a href: "/" do
+        a href: "/", style: "margin-left:5px;margin-right:5px" do
           i class: "mdi mdi-home"
         end
-        a href: "/auth" do
+        a href: "/sign_in", style: "margin-left:5px;margin-right:5px" do
           i class: "mdi mdi-login"
+        end
+        a href: "/docs", style: "margin-left:5px;margin-right:5px" do
+          i class: "mdi mdi-information-outline"
         end
       end
       br

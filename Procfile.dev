@@ -1,3 +1,3 @@
 system_check: script/system_check && sleep 100000
-web: lucky watch --reload-browser
+web: lucky watch --reload-browser --error-trace
 assets: yarn watch
