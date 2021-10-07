@@ -47,5 +47,5 @@ abstract class AuthLayout
         a "Github", href: "https://github.com/onoderaproject"
       end
     end
-end
+  end
 end

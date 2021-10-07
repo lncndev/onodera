@@ -22,6 +22,7 @@ class Init::V20211006131253 < Avram::Migrator::Migration::V1
       add title : String
       add description : String?, default: "No description provided."
       add image_url : String?
+      add mal_id : String?
     end
 
     create table_for(User) do

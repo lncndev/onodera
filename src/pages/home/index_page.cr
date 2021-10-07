@@ -1,9 +1,15 @@
 class Home::IndexPage < AuthLayout
   def content
-    h1 do; b do; text "Modern. Open. Beautiful."; end; end
+    h1 do
+      b do
+        text "Modern. Open. Beautiful."
+      end
+    end
     h2 do
       text "An anime and manga database "
-      u do; text "by weebs for weebs"; end
+      u do
+        text "by weebs for weebs"
+      end
       text "."
     end
     br
@@ -16,7 +22,7 @@ class Home::IndexPage < AuthLayout
     link to: SignUps::New do
       button "Sign up", class: "btn btn-primary", style: ""
     end
-    br;br
+    br; br
     para style: "font-size:10px" do
       text "An account is required at this time. This requirement will be lifted once we get better spam protection set up."
     end

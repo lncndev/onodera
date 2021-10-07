@@ -1,5 +1,5 @@
 class ScrapeTasks::New < BrowserAction
-  get "/scrape_tasks/new" do
+  get "/scrape/new" do
     html NewPage, operation: SaveScrapeTask.new
   end
 end

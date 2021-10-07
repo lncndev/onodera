@@ -1,7 +1,7 @@
 <p align="center"><img src="https://raw.githubusercontent.com/onoderaproject/onodera/main/public/assets/images/logo/256.png" /></p>
 
 <h1 align="center">Onodera</h1>
-<h3 align="center">v1.0 "Kukuru"</h3>
+<h3 align="center">v1.1.2 "Kukuru"</h3>
 
 ---
 

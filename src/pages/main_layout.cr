@@ -38,11 +38,14 @@ abstract class MainLayout
         text "onodera"; br
       end
       h3 style: "margin-top:-65px" do
-        a href: "/" do
+        a href: "/", style: "margin-left:5px;margin-right:5px" do
           i class: "mdi mdi-home"
         end
-        a href: "/auth" do
+        a href: "/sign_in", style: "margin-left:5px;margin-right:5px" do
           i class: "mdi mdi-login"
+        end
+        a href: "/docs", style: "margin-left:5px;margin-right:5px" do
+          i class: "mdi mdi-information-outline"
         end
       end
       br
