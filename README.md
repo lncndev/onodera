@@ -1,3 +1,5 @@
+## The Kemal implementation of Onodera has been discontinued. Please update to v1.1.2 or greater.
+
 <p align="center"><img src="https://raw.githubusercontent.com/onoderaproject/onodera/main/public/assets/images/logo/256.png" /></p>
 
 <h1 align="center">Onodera</h1>
