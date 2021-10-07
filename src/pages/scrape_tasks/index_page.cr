@@ -9,12 +9,8 @@ class ScrapeTasks::IndexPage < MainLayout
   end
 
   def render_scrape_tasks
-    ul do
-      scrape_tasks.each do |scrape_task|
-        li do
-          link scrape_task.mal_id, ScrapeTasks::Show.with(scrape_task)
-        end
-      end
+    scrape_tasks.each do |scrape_task|
+      link scrape_task.mal_id, ScrapeTasks::Index
     end
   end
 end

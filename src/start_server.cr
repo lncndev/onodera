@@ -1,5 +1,9 @@
 require "./app"
 
+Mosquito.configure do |set|
+  set.redis_url = "redis://localhost:6379/0"
+end
+
 Habitat.raise_if_missing_settings!
 
 if LuckyEnv.development?
@@ -13,4 +17,5 @@ Signal::INT.trap do
   app_server.close
 end
 
+require "./mosquito"
 app_server.listen

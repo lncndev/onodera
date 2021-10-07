@@ -2,10 +2,6 @@ require "mosquito"
 require "redis"
 require "jikancr"
 
-Mosquito.configure do |settings|
-  settings.redis_url = "redis://localhost:6379/0"
-end
-
 class ScrapingTask < Mosquito::PeriodicJob
   run_every 4.seconds
 
