@@ -40,6 +40,7 @@ Because it is and always will be:
  - ~~MAL scraper~~
  - ~~Official hosted instance~~
  - [WIP] ~~Port to Lucky~~
+ - Characters support in Lucky rewrite
  - Onodera Tsukamu: Torrent grabber and downloader
    - Tsukamu Server: Finds and keeps DB of torrents while not actually storing any torrents or magnet links (will be part of Onodera server)
    - Tsukamu Client: Asks server for torrent and downloads it
