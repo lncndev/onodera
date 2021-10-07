@@ -11,7 +11,7 @@ Welcome to Onodera's official documentation!
 Spam or content that is "bottom of the barrel" in terms of quality, will be removed. Repeat offense could result in more serious action.
 
 #### Do not use the API to populate your own database
-Use our JSON dataset (auto-generated every hour.)
+It's quite resource intensive to give an archive of everything in our database to anyone that asks for it. Please use our JSON dataset instead (auto-generated every hour.)
 
 
 

@@ -9,12 +9,12 @@ Onodera is an anime and manga database similar to MAL (MyAnimeList.) Written in 
 
 ## Installation
 Onodera isn't meant to be self-hosted, but you can build it like so:
- 1) Install Crystal compiler
+ 1) Install Crystal compiler (AUR: `crystal`), Crystal Shards (AUR: `shards`), and the Lucky framework (AUR: `lucky`)
  2) Clone project
  3) Change directory to `onodera`
  4) Verify you're on the `prod` branch as `main` may contain unstable and/or broken code
- 5) Build `src/start_server.cr`
- 6) Make sure Postgres and Redis server are installed and running
+ 5) `~$ lucky build.release`
+ 6) Make sure both Postgres and Redis are installed, running, and properly configured in the Onodera config
  7) Run binary
 
 ## Why use Onodera?
@@ -40,6 +40,7 @@ Because it is and always will be:
  - ~~MAL scraper~~
  - ~~Official hosted instance~~
  - [WIP] ~~Port to Lucky~~
+ - Characters support in Lucky rewrite
  - Onodera Tsukamu: Torrent grabber and downloader
    - Tsukamu Server: Finds and keeps DB of torrents while not actually storing any torrents or magnet links (will be part of Onodera server)
    - Tsukamu Client: Asks server for torrent and downloads it
