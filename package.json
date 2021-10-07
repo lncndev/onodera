@@ -3,7 +3,7 @@
   "private": true,
   "dependencies": {
     "@rails/ujs": "^6.0.0",
-    "mdi": "^2.2.43",
+    "@mdi/font": "^2.2.43",
     "modern-normalize": "^1.1.0",
     "rotala": "^0.0.7",
     "turbolinks": "^5.2.0"

@@ -1,6 +1,7 @@
 class Me::ShowPage < MainLayout
   def content
-    h1 "Hello, #{@current_user.username}!"
+    h1 "Kon'nichiwa!"
+    para "(That's how we say \"hello\")", style: "font-size:10px;margin-top:-20px"
     actions
   end
 
