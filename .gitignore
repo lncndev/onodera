@@ -16,3 +16,4 @@ shard.lock
 *.rdb
 yarn.lock
 onodera
+.vscode
