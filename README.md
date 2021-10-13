@@ -7,6 +7,18 @@
 
 Onodera is an anime and manga database similar to MAL (MyAnimeList.) Written in Crystal.
 
+
+
+## Official Instances
+
+### [onodb.org](https://onodb.org)
+Production Onodera
+
+### [COMING SOON] [atarashi.onodb.org](https://atarashi.onodb.org)
+"Uncharted" version of Onodera, pulls direct from `main`
+
+
+
 ## Installation
 Onodera isn't meant to be self-hosted, but you can build it like so:
  1) Install Crystal compiler (AUR: `crystal`), Crystal Shards (AUR: `shards`), and the Lucky framework (AUR: `lucky`)
@@ -17,6 +29,8 @@ Onodera isn't meant to be self-hosted, but you can build it like so:
  6) Make sure both Postgres and Redis are installed, running, and properly configured in the Onodera config
  7) Run binary
 
+
+
 ## Why use Onodera?
 Because it is and always will be:
  - Fast
@@ -26,6 +40,8 @@ Because it is and always will be:
  - Transparent
  - Open source
  - Free for everyone (extra functionality with freemium)
+
+
 
 ## TODO
 
@@ -41,9 +57,9 @@ Because it is and always will be:
  - ~~Official hosted instance~~
  - [WIP] ~~Port to Lucky~~
  - Characters support in Lucky rewrite
- - Onodera Tsukamu: Torrent grabber and downloader
-   - Tsukamu Server: Finds and keeps DB of torrents while not actually storing any torrents or magnet links (will be part of Onodera server)
-   - Tsukamu Client: Asks server for torrent and downloads it
+ - Onodera Uruka: Torrent grabber and downloader
+   - Uruka Server: Finds and keeps DB of torrents while not actually storing any torrents or magnet links (will be part of Onodera server)
+   - Uruka Client: Asks server for torrent and downloads it
  - Art
  - Episode support
  - Page edit history
@@ -66,6 +82,8 @@ Because it is and always will be:
  - Recommendations
  - And more
 
+
+
 ## Contributing
 ### Fixes and other minor changes
  1) Fork it (<https://github.com/onoderaproject/onodera/fork>)
@@ -80,8 +98,12 @@ Because it is and always will be:
  4) Push to the branch (`git push origin my-new-feature`)
  5) Create a new Pull Request
 
+
+
 ## Contributors
  - [lncndev](https://gitlab.com/lncn) - creator and maintainer
+
+
 
 ## Licensing
 
