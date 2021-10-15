@@ -1,14 +1,14 @@
 name: onodera
-version: 1.1.4
+version: 1.2
 
 authors:
-  - lncndev <lincoln@chuuo.net>
+  - lncndev <lincoln@onodb.org>
 
 targets:
   lucky:
     main: src/onodera.cr
 
-crystal: 1.1.1
+crystal: 1.2.0
 license: AGPLv3
 
 dependencies:

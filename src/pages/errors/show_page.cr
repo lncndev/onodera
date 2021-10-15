@@ -17,8 +17,10 @@ class Errors::ShowPage
 
       body do
         div class: "container" do
+          h1 "Nani?!"
+          para "Something went wrong. Try reloading the page or returning to home."
           h2 status, class: "status-code"
-          h1 message, class: "message"
+          h3 message, class: "message"
 
           ul class: "helpful-links" do
             li do

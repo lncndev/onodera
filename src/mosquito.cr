@@ -16,6 +16,59 @@ class ScrapingTask < Mosquito::PeriodicJob
   end
 end
 
+class BuildYAMLDataset < Mosquito::PeriodicJob
+  run_every 1.hour
+
+  def perform
+    File.write("data.yaml", build_yaml_string)
+  end
+
+  private def build_yaml_string
+    yaml_string = YAML.build do |yaml|
+      yaml.mapping do
+        yaml.scalar "anime"
+        yaml.sequence do
+          AnimeQuery.new.each do |anime|
+            yaml.mapping do
+              yaml.scalar anime.id
+              yaml.mapping do
+                yaml.scalar "title"
+                yaml.scalar anime.title.to_s
+              end
+              yaml.mapping do
+                yaml.scalar "description"
+                yaml.scalar anime.description.to_s
+              end
+              yaml.mapping do
+                yaml.scalar "image_url"
+                yaml.scalar anime.image_url.to_s
+              end
+              yaml.mapping do
+                yaml.scalar "mal_id"
+                yaml.scalar anime.mal_id.to_s
+              end
+              yaml.mapping do
+                yaml.scalar "age_rating"
+                yaml.scalar anime.age_rating.to_s
+              end
+              yaml.mapping do
+                yaml.scalar "release"
+                yaml.scalar anime.release.to_s
+              end
+              yaml.mapping do
+                yaml.scalar "episode_count"
+                yaml.scalar anime.episode_count.to_s
+              end
+            end
+          end
+        end
+      end
+    end
+
+    yaml_string.to_s
+  end
+end
+
 spawn do
   Mosquito::Runner.start
 end

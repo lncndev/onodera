@@ -7,5 +7,7 @@ class Anime < BaseModel
     column age_rating : String?
     column release : String?
     column episode_count : Int32?
+
+    has_many characters : Character
   end
 end

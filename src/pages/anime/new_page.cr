@@ -11,9 +11,8 @@ class Anime::NewPage < MainLayout
   def render_anime_form(op)
     form_for Anime::Create do
       # Edit fields in src/components/anime/form_fields.cr
-      mount Anime::FormFields, op
-
-      submit "Save", data_disable_with: "Saving...", style: "btn btn-primary"
+      mount Anime::FormFields, op; br
+      submit "Save", data_disable_with: "Saving...", class: "btn btn-primary"
     end
   end
 end

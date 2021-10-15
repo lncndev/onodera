@@ -34,4 +34,10 @@ class Anime::ShowPage < MainLayout
     end
     para HTML.escape(anime.description.to_s).gsub("&amp;", "&").gsub("&#39;", "'").gsub("&quot;", "\""), style: "max-width:70%"
   end
+
+  def render_characters
+    CharacterQuery.new.source(anime.id).each do |character|
+      para character.name.to_s
+    end
+  end
 end
