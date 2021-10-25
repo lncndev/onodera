@@ -1,4 +1,4 @@
-<p align="center"><img src="https://raw.githubusercontent.com/onoderaproject/onodera/main/public/assets/images/logo/256.png" /></p>
+# I have gotten cut off from the unofficial MAL API I was using and the project has been shut down. It was fun while it lasted.
 
 <h1 align="center">Onodera</h1>
 <h3 align="center">v1.1.4 "Kukuru"</h3>
@@ -6,16 +6,6 @@
 ---
 
 Onodera is an anime and manga database similar to MAL (MyAnimeList.) Written in Crystal.
-
-
-
-## Official Instances
-
-### [onodb.org](https://onodb.org)
-Production Onodera
-
-### [COMING SOON] [atarashi.onodb.org](https://atarashi.onodb.org)
-"Uncharted" version of Onodera, pulls direct from `main`
 
 
 
